@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=MedievalSharp|Monoton");
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -29,6 +30,7 @@
   .menu.show {
     visibility: visible; }
   .menu-nav {
+    font-family: 'Monoton', cursive;
     display: flex;
     flex-flow: column wrap;
     align-content: center;
@@ -38,7 +40,7 @@
     height: 100vh;
     overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 15px;
     background: #373737;
     list-style: none;
     transform: translate3d(0, 100%, 0);
@@ -60,6 +62,8 @@
     font-weight: 100;
     text-decoration: none;
     transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #12a0e7; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -76,28 +80,49 @@
 .nav-item:nth-child(5) {
   transition-delay: 0.5s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: left; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav {
+    width: 100%;
+    align-items: center; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 4vh;
+    font-size: 3rem; } }
+
 * {
   box-sizing: border-box; }
+
+html {
+  height: 100%; }
 
 body {
   background-color: #444;
   height: 100%;
   margin: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding: 0;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/background.png);
+    background: url(../img/background.jpg);
     background-attachment: fixed;
-    background-size: cover; }
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
   body:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: rgba(68, 68, 68, 0.9); }
+    background: rgba(68, 68, 68, 0.8); }
 
 h1,
 h2,
@@ -106,7 +131,8 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 4rem; }
+    font-size: 4rem;
+    font-family: 'MedievalSharp', cursive; }
 
 a {
   color: #fff;
@@ -121,12 +147,33 @@ main {
   padding: 4rem;
   height: 100%; }
   main .icons {
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    position: fixed;
+    bottom: 2%;
+    left: 5%; }
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #12a0e7;
         transition: all 0.5s ease-out; }
+  main .profession {
+    list-style: none;
+    margin: 0;
+    padding-top: 120px;
+    padding-left: 0px; }
+    main .profession .profession-line {
+      position: absolute; }
+    main .profession .show {
+      opacity: 1;
+      transform: translate3d(0, -120px, 0);
+      transition: all 0.5s ease-out; }
+    main .profession .up {
+      opacity: 0;
+      transform: translate3d(0, -240px, 0);
+      transition: all 0.5s ease-out; }
+    main .profession .down {
+      opacity: 0;
+      transform: translate3d(0, 0, 0); }
 
 #home {
   overflow: hidden; }
